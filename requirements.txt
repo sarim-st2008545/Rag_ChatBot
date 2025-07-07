@@ -1,22 +1,25 @@
-# Core
-fastapi
-uvicorn
-python-multipart # For file uploads
+# # Core
+# fastapi
+# uvicorn
+# python-multipart # For file uploads
 
-# LangChain Ecosystem
-langchain
-langgraph
-langchain-community
+# # LangChain Ecosystem
+# langchain
+# langgraph
+# langchain-community
+# langchain_chroma
+langchain-huggingface>=0.0.2
+gradio
+# # Document Processing
+# pypdf
+# unstructured # Alternative PDF processor
 
-# Document Processing
-pypdf==3.17.1
-unstructured # Alternative PDF processor
+# # Free Embeddings
+# sentence-transformers
 
-# Free Embeddings
-sentence-transformers
+# # Vector Database
+# chromadb
 
-# Vector Database
-chromadb
-
-# LLM Backend 
-langchain-groq==0.1.0
+# # LLM Backend 
+# langchain-groq
+# google-generativeai
