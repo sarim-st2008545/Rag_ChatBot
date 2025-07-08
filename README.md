@@ -41,11 +41,7 @@ cd <your-repository-name>
 
 The application requires an API key from Groq.
 
-1.  Create a new file named `.env` in the backend/ directory of the project by copying the template:
-    ```bash
-    cp .env.example .env
-    ```
-2.  Open the `.env` file and add your Groq API key.. (for testing I have also shared my own API key in the project ppt, you can use that!):
+1.  Create a new file named `.env` file and add your Groq API key.. (for testing I have also shared my own API key in the project ppt, you can use that!):
     ```
     GROQ_API_KEY="YOUR_ACTUAL_API_KEY_HERE"
     ```
