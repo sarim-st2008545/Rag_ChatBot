@@ -12,7 +12,7 @@ function App() {
     setFiles(e.target.files);
     setUploadStatus(''); // Reset status when new files are selected
   };
-
+//  this function handles the process of uploading files from the user's browser to our backend server.
   const handleUpload = async () => {
     if (!files || files.length === 0) {
       setUploadStatus('Please select files first');
@@ -38,6 +38,8 @@ function App() {
     }
   };
 
+// this function manages the entire process of a user sending a message and 
+// receiving a response from the chatbot, ensuring the UI updates smoothly.
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading) return;
 
@@ -61,7 +63,7 @@ function App() {
         throw new Error(data.detail || 'Failed to get a response.');
       }
 
-      // Add the AI's response to history
+      // Add the AI's response to history, so the goal is to display the result in the chat window and reset the UI.
       setChatHistory(prev => [...prev, { sender: 'ai', text: data.response }]);
     } catch (err) {
       setChatHistory(prev => [...prev, { sender: 'ai', text: `Error: ${err.message}` }]);

@@ -31,7 +31,7 @@ async def startup_event():
 @app.post("/upload")
 async def upload_files(files: List[UploadFile] = File(...)):
     """Handles PDF uploads and adds them to the persistent database."""
-    if not all(file.filename.endswith('.pdf') for file in files):
+    if not all(file.filename.endswith('.pdf') for file in files):  # inorder to make sure only pdf files are uploaded!
         raise HTTPException(400, "Only PDF files are supported.")
     
     newly_uploaded_paths = []
@@ -78,15 +78,6 @@ async def chat(message: str = Form(...)):
         return {"response": chat_response.response}
     except Exception as e:
         raise HTTPException(500, f"Error generating response: {str(e)}")
-
-# @app.post("/chat-json")
-# async def chat_json(request: ChatRequest):
-#     """Handle chat messages using JSON."""
-#     try:
-#         chat_response = generate_response(request.message)
-#         return {"response": chat_response.response}
-#     except Exception as e:
-#         raise HTTPException(500, f"Error generating response: {str(e)}")
 
 @app.get("/")
 def health_check():

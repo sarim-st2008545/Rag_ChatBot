@@ -1,5 +1,3 @@
-# In ingest.py
-
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -39,6 +37,7 @@ def process_multiple_pdfs(file_paths: List[str]):
     if not all_documents:
         raise ValueError("No new documents found to process")
     
+    # Each chunk is set to 400 characters with an 80-character overlap to ensure no context is lostbetween chunks.
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=400,
         chunk_overlap=80,
@@ -48,9 +47,6 @@ def process_multiple_pdfs(file_paths: List[str]):
     
     embeddings = get_embeddings()
     
-    # --- THIS IS THE KEY CHANGE ---
-    # The code no longer deletes the database. It connects to the existing one
-    # (or creates it if it doesn't exist) and adds new documents.
     vector_store = Chroma(
         persist_directory=CHROMA_DB_PATH,
         embedding_function=embeddings,
@@ -58,7 +54,6 @@ def process_multiple_pdfs(file_paths: List[str]):
     )
     
     vector_store.add_documents(chunks)
-    # vector_store.persist()
     
     print(f"✅ Added {len(chunks)} new chunks to the database from {len(file_paths)} files.")
     return vector_store, len(chunks)

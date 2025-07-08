@@ -24,17 +24,17 @@ def get_vector_store():
         return Chroma(
             collection_name="doc_qa",
             embedding_function=embeddings,
-            persist_directory=CHROMA_DB_PATH # Use the correct path
+            persist_directory=CHROMA_DB_PATH # use the correct path
         )
     print(f"Warning: Vector store not found at {CHROMA_DB_PATH}")
     return None
 
-def get_enhanced_response(query: str):
+def get_enhanced_response(query: str): # retrieves the most relevant document chunks from your vector database
     """Core RAG functionality"""
     vector_store = get_vector_store()
     if not vector_store:
         return None
-    
+    # implements two different search methods in order. If the first one succeeds, it returns the results immediately. or else, second!
     strategies = [
         lambda: vector_store.similarity_search(query, k=5),
         lambda: vector_store.max_marginal_relevance_search(query, k=3)
@@ -55,6 +55,7 @@ def generate_response(message: str) -> ChatResponse:
     docs = get_enhanced_response(message)
     if not docs:
         return ChatResponse(
+            # it will reply this when no documents will be uploaded!
             response="I can't seem to find an answer in your documents. Please ensure the topic is covered in the files you uploaded.",
             success=False,
             error="No documents"
@@ -69,7 +70,7 @@ def generate_response(message: str) -> ChatResponse:
         response = client.chat.completions.create(
             messages=[{
                 "role": "user",
-                "content": f"Answer using ONLY this context:\n{context}\n\nQuestion: {message}"
+                "content": f"Answer using ONLY this context:\n{context} \n\nQuestion: {message}"
             }],
             model="llama-3.3-70b-versatile",
             temperature=0.3
