@@ -52,7 +52,7 @@ The application requires an API key from Groq.
 
 **Step 3: Build and Run the Application**
 
-Use Docker Compose to build the images and run the containers:
+Use Docker Compose to build the images and run the containers using command below in root directory:
 
 ```bash
 docker-compose up --build -d
