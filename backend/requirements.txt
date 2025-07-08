@@ -1,0 +1,26 @@
+# Core
+fastapi
+uvicorn
+python-multipart # For file uploads
+
+# LangChain Ecosystem
+langchain
+langchain-community
+langchain_chroma
+langchain-huggingface>=0.0.2
+
+# Document Processing
+pypdf
+unstructured # Alternative PDF processor
+
+# Free Embeddings
+sentence-transformers
+
+# Vector Database
+chromadb
+
+# LLM Backend 
+langchain-groq
+google-generativeai
+
+axios  
