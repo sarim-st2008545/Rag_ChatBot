@@ -13,7 +13,6 @@ This project is a sophisticated Question & Answer chatbot built with a Retrieval
 * **Containerized Application**: The entire application is containerized with Docker for easy setup and deployment.
 
 ---
-
 ## Tech Stack
 
 * **Backend**: Python with FastAPI
@@ -42,11 +41,11 @@ cd <your-repository-name>
 
 The application requires an API key from Groq.
 
-1.  Create a new file named `.env` in the root of the project by copying the template:
+1.  Create a new file named `.env` in the backend/ directory of the project by copying the template:
     ```bash
     cp .env.example .env
     ```
-2.  Open the `.env` file and add your Groq API key:
+2.  Open the `.env` file and add your Groq API key.. (for testing I have also shared my own API key in the project ppt, you can use that!):
     ```
     GROQ_API_KEY="YOUR_ACTUAL_API_KEY_HERE"
     ```
@@ -85,3 +84,10 @@ The backend provides the following RESTful API endpoints:
 1.  **Open the Application**: Navigate to `http://localhost:3000` in your web browser.
 2.  **Upload Documents**: Click the paperclip icon (📎), select one or more PDF files, and click "Upload & Process".
 3.  **Ask Questions**: Once the documents are processed, type your questions into the input bar and press Enter or click the send button (➤).
+
+## These images show the chatbot running successfully!
+![This image shows the chatbot when asked several questions, as the knowledge base was empty, it could'nt answer any question!](test_Images\before_rag.png)
+
+![This image shows the chatbot when the files were successfully uploaded to the knowledge base!](test_Images\files_uploaded.png)
+
+![This image shows the chatbot after multiple files were uploaded to the knowledge base, after that AI was able to answer those same questions!](test_Images\after_rag.png)

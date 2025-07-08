@@ -55,7 +55,7 @@ def generate_response(message: str) -> ChatResponse:
     docs = get_enhanced_response(message)
     if not docs:
         return ChatResponse(
-            response="No relevant documents found",
+            response="I can't seem to find an answer in your documents. Please ensure the topic is covered in the files you uploaded.",
             success=False,
             error="No documents"
         )
