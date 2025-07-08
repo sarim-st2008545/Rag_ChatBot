@@ -79,14 +79,14 @@ async def chat(message: str = Form(...)):
     except Exception as e:
         raise HTTPException(500, f"Error generating response: {str(e)}")
 
-@app.post("/chat-json")
-async def chat_json(request: ChatRequest):
-    """Handle chat messages using JSON."""
-    try:
-        chat_response = generate_response(request.message)
-        return {"response": chat_response.response}
-    except Exception as e:
-        raise HTTPException(500, f"Error generating response: {str(e)}")
+# @app.post("/chat-json")
+# async def chat_json(request: ChatRequest):
+#     """Handle chat messages using JSON."""
+#     try:
+#         chat_response = generate_response(request.message)
+#         return {"response": chat_response.response}
+#     except Exception as e:
+#         raise HTTPException(500, f"Error generating response: {str(e)}")
 
 @app.get("/")
 def health_check():
