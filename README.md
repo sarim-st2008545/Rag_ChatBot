@@ -87,6 +87,7 @@ The backend provides the following RESTful API endpoints:
 
 ## These images show the chatbot running successfully!
 ![This image shows the chatbot when asked several questions, as the knowledge base was empty, it could'nt answer any question!](test_Images\before_rag.png)
+https://github.com/sarim-st2008545/Rag_ChatBot/blob/97e04bee43b96ff9c9cbe8622ca289878f789ec9/test_Images/after_rag.png
 
 ![This image shows the chatbot when the files were successfully uploaded to the knowledge base!](test_Images\files_uploaded.png)
 
