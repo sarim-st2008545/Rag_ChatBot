@@ -52,7 +52,7 @@ The application requires an API key from Groq.
 
 **Step 3: Build and Run the Application**
 
-Use Docker Compose to build the images and run the containers:
+Use Docker Compose to build the images and run the containers using command below in root directory:
 
 ```bash
 docker-compose up --build -d
@@ -86,8 +86,11 @@ The backend provides the following RESTful API endpoints:
 3.  **Ask Questions**: Once the documents are processed, type your questions into the input bar and press Enter or click the send button (➤).
 
 ## These images show the chatbot running successfully!
-![This image shows the chatbot when asked several questions, as the knowledge base was empty, it could'nt answer any question!](test_Images\before_rag.png)
+### This image shows the chatbot when asked several questions, as the knowledge base was empty, it could'nt answer any question!
+![This image shows the chatbot when asked several questions, as the knowledge base was empty, it could'nt answer any question!](https://github.com/sarim-st2008545/Rag_ChatBot/blob/main/test_Images/before_rag.png?raw=true)
 
-![This image shows the chatbot when the files were successfully uploaded to the knowledge base!](test_Images\files_uploaded.png)
+### This image shows the chatbot when the files were successfully uploaded to the knowledge base!
+![This image shows the chatbot when the files were successfully uploaded to the knowledge base!](https://github.com/sarim-st2008545/Rag_ChatBot/blob/main/test_Images/files_uploaded%20.png?raw=true)
 
-![This image shows the chatbot after multiple files were uploaded to the knowledge base, after that AI was able to answer those same questions!](test_Images\after_rag.png)
+### This image shows the chatbot after multiple files were uploaded to the knowledge base, after that AI was able to answer those same questions!
+![This image shows the chatbot after multiple files were uploaded to the knowledge base, after that AI was able to answer those same questions!](https://github.com/sarim-st2008545/Rag_ChatBot/blob/main/test_Images/after_rag.png?raw=true)
